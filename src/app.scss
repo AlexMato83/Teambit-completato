@@ -1,0 +1,245 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Baloo Bhaina 2', cursive;
+  color:#58402c;
+}
+@import "variables";
+// inizio header hide
+#header2 {
+  @include bothHeader;
+  height: 80px;
+  .header-search ul li:nth-child(5){
+    background:#30488f;
+    color: white;
+    img {
+      filter:brightness(10000%);
+
+    }
+  }
+}
+
+
+// fine header hide
+// inizio header show
+header{
+  @include bothHeader;
+  position: relative;
+  height: 80px;
+  border: none;
+
+  &:before {
+    content : "";
+    position: absolute;
+    left    : 15%;
+    bottom  : 0;
+    height  : 1px;
+    width   : 70%;  /* or 100px */
+    border-bottom:1px solid grey;
+  }
+}
+// fine header show
+
+main {
+  height: 100%;
+}
+.content{
+  h1{
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  h3{
+    margin-bottom: 40px;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+}
+.content-ahref {
+
+  width: 80%;
+  display: flex;
+  align-items: center;
+  a {
+  @include button;
+  margin-right: 15px;
+    + p + a{
+      margin-left: 15px;
+    }
+  }
+}
+
+main {
+  #sec1{
+    @include sec-1-footer;
+    margin-top: 100px;
+    padding: 50px 15%;
+    display:flex;
+    .content{
+      width: 50%;
+      height: 100%;
+    }
+    .jumbo{
+      width: 50%;
+      height: 100%;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  #sec2{
+    position: relative;
+    &:before {
+      content : "";
+      position: absolute;
+      left    : 15%;
+      bottom  : 0;
+      height  : 1px;
+      width   : 70%;  /* or 100px */
+      border-bottom:1px solid grey;
+    }
+  }
+  #sec2,#sec3,#sec8 {
+    @include sec-2-3-8;
+    .sec2-img {
+      display: flex;
+      justify-content: center;
+      img{
+        width: 40%;
+        height: 100%;
+      }
+    }
+    > div {
+      height: 35%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      > div {
+        height: 100%;
+        width: 30%;
+        &:nth-child(3) img{
+          width: 50%;
+        }
+        img {
+          height: 60%;
+          width: 100%;
+        }
+      }
+    }
+    }
+}
+
+#sec4,#sec6{
+  .sec4-text{
+    img{
+      margin-left: 50px;
+    }
+  }
+}
+#sec5,#sec7{
+  .sec4-text{
+    margin-left: 14%;
+  }
+  img{
+    order: 2;
+  }
+}
+#sec4,#sec5,#sec6,#sec7{
+
+  display: flex;
+  @include sec4-5-6-7;
+}
+// mixin images 4 and 6
+#sec8 {
+  h1 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 32px;
+  }
+    > div:nth-child(2){
+    background: white;
+    border-radius: 5px;
+    border:1px solid grey;
+    text-align: left;
+    padding: 27px;
+    display: block;
+    height: auto;
+    > div {
+      display: flex;
+      width: 100%;
+      height: auto;
+      > div:nth-child(1) {
+        display: flex;
+        align-items: center;
+        img {
+          height: 40px;
+          width: auto;
+          &:nth-child(2){
+            margin: 0 10px;
+          }
+        }
+      }
+      > div:nth-child(2){
+        p:nth-child(1){
+          color:#30488f;
+          height: 18px;
+        }
+
+      }
+    }
+  }
+  .sec8-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+    @include button;
+    margin-right: 15px;
+      + p + a{
+        margin-left: 15px;
+      }
+    }
+  }
+
+
+}
+
+footer{
+ div {
+   width: 15%;
+ }
+  div > span {
+    font-size: 20px;
+        font-weight: 600;
+  }
+  li{
+    list-style-type: none;
+  }
+  padding:75px;
+  display: flex;
+  background: white;
+  height: 500px;
+  div:first-child {
+    width: 30%;
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    line-height: 1;
+    img{
+      width: 50px;
+      margin-right: 20px;
+    }
+    span{
+      font-size: 20px;
+
+      p{
+        color:#30488f;
+      }
+    }
+  }
+}
